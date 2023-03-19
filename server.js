@@ -7,11 +7,7 @@ const routers = require("./router/todoRoute");
 const app = express();
 DataBase();
 
-app.use(
-  cors({
-    origin: ["https://hashibtodo.onrender.com"],
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
