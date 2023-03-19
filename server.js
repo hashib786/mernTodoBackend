@@ -9,7 +9,7 @@ DataBase();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://hashibtodo.onrender.com/"],
   })
 );
 app.use(express.json());
