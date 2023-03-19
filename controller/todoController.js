@@ -18,7 +18,6 @@ exports.getAllTodo = async (req, res, next) => {
 
 exports.createTodo = async (req, res, next) => {
   try {
-    console.log(req.body);
     const todo = await TodoApp.create({ name: req.body.name });
     res.status(200).json({
       status: "sucess",
@@ -64,10 +63,10 @@ exports.updateTodo = async (req, res) => {
 
 exports.deleteTodo = async (req, res) => {
   try {
-    await TodoApp.findByIdAndDelete(req.params.id);
+    const todo = await TodoApp.findByIdAndDelete(req.params.id);
     res.status(200).send({
       staus: "sucess",
-      message: "updated",
+      message: todo,
     });
   } catch (err) {
     res.status(404).json({
